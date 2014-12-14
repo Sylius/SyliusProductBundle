@@ -12,21 +12,19 @@
 namespace Sylius\Bundle\ProductBundle\Controller;
 
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
-use Sylius\Component\Product\Builder\PrototypeBuilderInterface;
+use Sylius\Component\Archetype\Builder\ArchetypeBuilderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Prototype controller.
+ * Archetype controller.
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@sylius.pl>
  */
-class PrototypeController extends ResourceController
+class ArchetypeController extends ResourceController
 {
     /**
-     * Build a product from the given prototype.
-     * Everything else works exactly like in product
-     * creation action.
+     * Build the object from the given archetype.
      *
      * @param Request $request
      * @param mixed   $id
@@ -35,14 +33,14 @@ class PrototypeController extends ResourceController
      */
     public function buildAction(Request $request, $id)
     {
-        $prototype = $this->findOr404($request, array('id' => $id));
+        $archetype = $this->findOr404($request, array('id' => $id));
         $productController = $this->getProductController();
 
         $product = $productController->createNew();
 
         $this
             ->getBuilder()
-            ->build($prototype, $product)
+            ->build($archetype, $product)
         ;
 
         $form = $productController->getForm($product);
@@ -58,7 +56,7 @@ class PrototypeController extends ResourceController
         }
 
         return $productController->render($this->config->getTemplate('build.html'), array(
-            'product_prototype' => $prototype,
+            'product_archetype' => $archetype,
             'product'           => $product,
             'form'              => $form->createView()
         ));
@@ -67,7 +65,7 @@ class PrototypeController extends ResourceController
     /**
      * Get product controller.
      *
-     * @return Controller
+     * @return ResourceController
      */
     protected function getProductController()
     {
@@ -75,12 +73,12 @@ class PrototypeController extends ResourceController
     }
 
     /**
-     * Get prototype builder.
+     * Get archetype builder.
      *
-     * @return PrototypeBuilderInterface
+     * @return ArchetypeBuilderInterface
      */
     protected function getBuilder()
     {
-        return $this->get('sylius.builder.product_prototype');
+        return $this->get('sylius.builder.product_archetype');
     }
 }

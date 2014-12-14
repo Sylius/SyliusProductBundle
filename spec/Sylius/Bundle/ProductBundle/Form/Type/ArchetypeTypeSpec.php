@@ -19,16 +19,16 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 /**
  * @author Paweł Jędrzejewski <pawel@sylius.org>
  */
-class PrototypeTypeSpec extends ObjectBehavior
+class ArchetypeTypeSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith('Prototype', array('sylius'));
+        $this->beConstructedWith('Archetype', array('sylius'));
     }
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\ProductBundle\Form\Type\PrototypeType');
+        $this->shouldHaveType('Sylius\Bundle\ProductBundle\Form\Type\ArchetypeType');
     }
 
     function it_is_a_form_type()
@@ -40,6 +40,11 @@ class PrototypeTypeSpec extends ObjectBehavior
     {
         $builder
             ->add('name', 'text', Argument::any())
+            ->willReturn($builder)
+        ;
+
+        $builder
+            ->add('parent', 'sylius_product_archetype_choice', Argument::any())
             ->willReturn($builder)
         ;
 
@@ -60,7 +65,7 @@ class PrototypeTypeSpec extends ObjectBehavior
     {
         $resolver->setDefaults(
             array(
-                'data_class' => 'Prototype',
+                'data_class' => 'Archetype',
                 'validation_groups' => array('sylius')
             ))->shouldBeCalled();
 
@@ -69,6 +74,6 @@ class PrototypeTypeSpec extends ObjectBehavior
 
     function it_has_valid_name()
     {
-        $this->getName()->shouldReturn('sylius_product_prototype');
+        $this->getName()->shouldReturn('sylius_product_archetype');
     }
 }
