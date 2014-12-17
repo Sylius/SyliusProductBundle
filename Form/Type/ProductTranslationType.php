@@ -15,12 +15,9 @@ use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 /**
- * Product form type.
- *
- * @author Paweł Jędrzejewski <pawel@sylius.org>
  * @author Gonzalo Vilaseca <gvilaseca@reiss.co.uk>
  */
-class ProductType extends AbstractResourceType
+class ProductTranslationType extends AbstractResourceType
 {
     /**
      * {@inheritdoc}
@@ -28,20 +25,19 @@ class ProductType extends AbstractResourceType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('masterVariant', 'sylius_product_variant', array(
-                'master' => true,
+            ->add('name', 'text', array(
+                'label' => 'sylius.form.product.name'
             ))
-            ->add('attributes', 'collection', array(
-                'required'     => false,
-                'type'         => 'sylius_product_attribute_value',
-                'allow_add'    => true,
-                'allow_delete' => true,
-                'by_reference' => false
+            ->add('description', 'textarea', array(
+                'label' => 'sylius.form.product.description'
             ))
-            ->add('options', 'sylius_product_option_choice', array(
+            ->add('metaKeywords', 'text', array(
                 'required' => false,
-                'multiple' => true,
-                'label'    => 'sylius.form.product.options'
+                'label'    => 'sylius.form.product.meta_keywords'
+            ))
+            ->add('metaDescription', 'text', array(
+                'required' => false,
+                'label'    => 'sylius.form.product.meta_description'
             ))
         ;
     }
@@ -51,6 +47,6 @@ class ProductType extends AbstractResourceType
      */
     public function getName()
     {
-        return 'sylius_product';
+        return 'sylius_product_translation';
     }
 }
