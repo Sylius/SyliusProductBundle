@@ -75,24 +75,11 @@ class ProductReviewAdminTypeSpec extends ObjectBehavior
         $builder->get('author')->willReturn($builder)->shouldBeCalled();
         $builder->addModelTransformer(Argument::type('Sylius\Bundle\ReviewBundle\Form\Transformer\ReviewAuthorTransformer'))->willReturn($builder)->shouldBeCalled();
 
-        $builder->resetModelTransformers()->shouldBeCalled();
-        $builder->remove('author')->willReturn($builder)->shouldBeCalled();
-
         $builder
-            ->add('author', 'entity', array(
-                'class'    => 'Sylius\Component\Core\Model\Customer',
-                'label'    => 'sylius.form.review.author',
-                'property' => 'email',
-            ))
-            ->willReturn($builder)
-            ->shouldBeCalled()
-        ;
-
-        $builder
-            ->add('product', 'entity', array(
-                'class'    => 'Sylius\Component\Review\Model\ReviewableInterface',
+            ->add('reviewSubject', 'entity', array(
+                'class'    => 'Sylius\Component\Product\Model\Product',
                 'label'    => 'sylius.form.review.product',
-                'property' => 'name',
+                'property' => 'id',
             ))
             ->willReturn($builder)
             ->shouldBeCalled()
