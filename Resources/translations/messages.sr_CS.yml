@@ -4,8 +4,8 @@
 sylius:
   form:
     product:
-      name: Namn
-      meta_keywords: Metasökord
-      meta_description: Metabeskrivning
+      name: Ime
+    product_variant:
+      available_on: Dostupno
     product_archetype:
-      name: Namn
+      name: Ime
