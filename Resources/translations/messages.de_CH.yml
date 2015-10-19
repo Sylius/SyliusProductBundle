@@ -4,8 +4,8 @@
 sylius:
   form:
     product:
-      name: Namn
-      meta_keywords: Metasökord
-      meta_description: Metabeskrivning
+      name: Name
+      meta_keywords: Meta-Stichwörter
+      meta_description: Meta-Beschreibung
     product_archetype:
-      name: Namn
+      name: Name
