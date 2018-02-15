@@ -6,6 +6,8 @@ sylius:
         product:
             name: Име
             description: Опис
+            attributes: Атрибути
+            options: Опције
         product_variant:
             name: Име
         association_type:
@@ -14,7 +16,3 @@ sylius:
             name: Име
         option:
             name: Име
-            values: Можни вредности
-        option_value:
-            add_value: Додај вредност
-            value: Вредност

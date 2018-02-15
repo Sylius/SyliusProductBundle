@@ -4,13 +4,12 @@
 sylius:
     form:
         product:
-            name: 이름
+            name: Naam
         product_variant:
-            name: 이름
+            name: Naam
         association_type:
-            name: 이름
+            name: Naam
         variant:
-            name: 이름
+            name: Naam
         option:
-            name: 이름
-            values: 예상값
+            name: Naam
