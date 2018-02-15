@@ -4,13 +4,13 @@
 sylius:
     form:
         product:
-            name: 이름
+            name: Nosaukums
+            description: Apraksts
         product_variant:
-            name: 이름
+            name: Nosaukums
         association_type:
-            name: 이름
+            name: Nosaukums
         variant:
-            name: 이름
+            name: Nosaukums
         option:
-            name: 이름
-            values: 예상값
+            name: Nosaukums
