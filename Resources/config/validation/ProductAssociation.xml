@@ -12,36 +12,26 @@
 -->
 
 <constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
-    <class name="Sylius\Component\Product\Model\ProductOptionTranslation">
+    <class name="Sylius\Component\Product\Model\ProductAssociation">
         <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
             <option name="fields">
-                <value>locale</value>
-                <value>translatable</value>
+                <value>owner</value>
+                <value>type</value>
             </option>
+            <option name="errorPath">owner</option>
+            <option name="message">sylius.association.unique</option>
             <option name="groups">sylius</option>
-            <option name="message">sylius.translation.locale.unique</option>
         </constraint>
-        <property name="name">
+        <property name="type">
             <constraint name="NotBlank">
-                <option name="message">sylius.option.name.not_blank</option>
-                <option name="groups">sylius</option>
-            </constraint>
-            <constraint name="Length">
-                <option name="min">2</option>
-                <option name="minMessage">sylius.option.name.min_length</option>
-                <option name="max">255</option>
-                <option name="maxMessage">sylius.option.name.max_length</option>
+                <option name="message">sylius.association.type.not_blank</option>
                 <option name="groups">sylius</option>
             </constraint>
         </property>
-        <property name="locale">
+        <property name="owner">
             <constraint name="NotBlank">
+                <option name="message">sylius.association.owner.not_blank</option>
                 <option name="groups">sylius</option>
-                <option name="message">sylius.translation.locale.not_blank</option>
-            </constraint>
-            <constraint name="Locale">
-                <option name="groups">sylius</option>
-                <option name="message">sylius.translation.locale.invalid</option>
             </constraint>
         </property>
     </class>
