@@ -42,9 +42,9 @@ final class ProductsToProductAssociationsTransformerSpec extends ObjectBehavior
         $this->shouldImplement(DataTransformerInterface::class);
     }
 
-    function it_transforms_an_empty_collection_to_an_empty_array(): void
+    function it_transforms_null_to_empty_string(): void
     {
-        $this->transform(new ArrayCollection())->shouldReturn([]);
+        $this->transform(null)->shouldReturn('');
     }
 
     function it_transforms_product_associations_to_array(
@@ -66,11 +66,8 @@ final class ProductsToProductAssociationsTransformerSpec extends ObjectBehavior
 
         $productAssociationType->getCode()->willReturn('accessories');
 
-        $this->transform(new ArrayCollection([$productAssociation->getWrappedObject()]))->shouldBeLike([
-            'accessories' => new ArrayCollection([
-                $firstAssociatedProduct->getWrappedObject(),
-                $secondAssociatedProduct->getWrappedObject(),
-            ])
+        $this->transform(new ArrayCollection([$productAssociation->getWrappedObject()]))->shouldReturn([
+            'accessories' => 'FIRST,SECOND',
         ]);
     }
 
