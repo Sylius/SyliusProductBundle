@@ -19,6 +19,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+trigger_deprecation(
+    'sylius/product-bundle',
+    '1.14',
+    'The "%s" class is deprecated and will be removed in Sylius 2.0.',
+    ProductSlugController::class,
+);
+
+/** @deprecated since Sylius 1.14 and will be removed in Sylius 2.0. */
 class ProductSlugController extends AbstractController
 {
     public function __construct(private ?SlugGeneratorInterface $slugGenerator = null)

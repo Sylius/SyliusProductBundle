@@ -23,6 +23,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+trigger_deprecation(
+    'sylius/product-bundle',
+    '1.14',
+    'The "%s" class is deprecated and will be removed in Sylius 2.0.',
+    ProductAttributeController::class,
+);
+
+/** @deprecated since Sylius 1.14 and will be removed in Sylius 2.0. */
 class ProductAttributeController extends ResourceController
 {
     public function getAttributeTypesAction(Request $request, string $template): Response
