@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Definition;
 
 final class SyliusProductExtensionsTest extends AbstractExtensionTestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_autoconfigures_product_variant_resolver_with_attribute(): void
     {
         $this->container->setDefinition(
