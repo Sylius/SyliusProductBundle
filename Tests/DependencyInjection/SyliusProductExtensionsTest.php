@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\ProductBundle\Tests\DependencyInjection;
 
+use PHPUnit\Framework\Attributes\Test;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Sylius\Bundle\ProductBundle\DependencyInjection\SyliusProductExtension;
 use Sylius\Bundle\ProductBundle\Tests\Stub\ProductVariantResolverStub;
@@ -20,7 +21,7 @@ use Symfony\Component\DependencyInjection\Definition;
 
 final class SyliusProductExtensionsTest extends AbstractExtensionTestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_autoconfigures_product_variant_resolver_with_attribute(): void
     {
         $this->container->setDefinition(
