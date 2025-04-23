@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\ProductBundle\Tests\DependencyInjection;
 
-use PHPUnit\Framework\Attributes\Test;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
+use PHPUnit\Framework\Attributes\Test;
 use Sylius\Bundle\ProductBundle\DependencyInjection\SyliusProductExtension;
 use Sylius\Bundle\ProductBundle\Tests\Stub\ProductVariantResolverStub;
 use Symfony\Component\DependencyInjection\Definition;
