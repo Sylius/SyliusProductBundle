@@ -11,7 +11,7 @@ sylius:
             unique: Le slug du produit doit être unique.
             max_length: Le slug du produit ne doit pas dépasser 1 caractère.|Le slug du produit ne doit pas dépasser {{ limit }} caractères.
         code:
-            not_blank: Veillez introduire le code du produit.
+            not_blank: Veuillez introduire le code du produit.
             regex: Le code du produit peut uniquement être constitué de lettres, chiffres, tirets et tirets bas.
             unique: Le code du produit doit être unique.
         name:
@@ -33,7 +33,7 @@ sylius:
             not_configured: 'La variante du produit doit avoir des valeurs configurées pour toutes les options choisies sur le produit.'
     simple_product:
         code:
-            unique: Le code d'un simple produit doit être unique parmi tous les produits et les variantes de produit.
+            unique: Le code d'un produit simple doit être unique parmi tous les produits et les variantes de produit.
     option:
         code:
             not_blank: Entrez le code de l'option.
@@ -61,7 +61,7 @@ sylius:
     association_type:
         name:
             not_blank: Entrez le nom du type d'association.
-            min_length: Le nom de l'association doit posséder au moins 1 caractère. | Le nom de l'association doit posséder au moins {{ limit }} caractères.
+            min_length: Le nom de l'association doit posséder au moins 1 caractère.|Le nom de l'association doit posséder au moins {{ limit }} caractères.
             max_length: Le nom de l'association ne doit pas excéder 1 caractère.|Le nom de l'association ne doit pas excéder {{ limit }} caractères.
         code:
             not_blank: Veuillez entrer le code du type d'association.
