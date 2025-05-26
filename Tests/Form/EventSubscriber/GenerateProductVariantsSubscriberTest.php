@@ -28,9 +28,9 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 final class GenerateProductVariantsSubscriberTest extends TestCase
 {
-    private ProductVariantGeneratorInterface&MockObject $generator;
+    private MockObject&ProductVariantGeneratorInterface $generator;
 
-    private RequestStack&MockObject $requestStack;
+    private MockObject&RequestStack $requestStack;
 
     private GenerateProductVariantsSubscriber $generateProductVariantsSubscriber;
 

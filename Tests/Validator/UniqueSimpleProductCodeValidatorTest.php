@@ -28,7 +28,7 @@ final class UniqueSimpleProductCodeValidatorTest extends TestCase
 {
     private ExecutionContextInterface&MockObject $context;
 
-    private ProductVariantRepositoryInterface&MockObject $productVariantRepository;
+    private MockObject&ProductVariantRepositoryInterface $productVariantRepository;
 
     private UniqueSimpleProductCodeValidator $uniqueSimpleProductCodeValidator;
 

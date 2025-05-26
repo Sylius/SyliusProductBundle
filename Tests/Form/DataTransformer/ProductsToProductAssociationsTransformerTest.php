@@ -29,9 +29,9 @@ final class ProductsToProductAssociationsTransformerTest extends TestCase
 {
     private FactoryInterface&MockObject $productAssociationFactory;
 
-    private ProductRepositoryInterface&MockObject $productRepository;
+    private MockObject&ProductRepositoryInterface $productRepository;
 
-    private RepositoryInterface&MockObject $productAssociationTypeRepository;
+    private MockObject&RepositoryInterface $productAssociationTypeRepository;
 
     private ProductsToProductAssociationsTransformer $productsToProductAssociationsTransformer;
 

@@ -27,7 +27,7 @@ final class ProductVariantCombinationValidatorTest extends TestCase
 {
     private ExecutionContextInterface&MockObject $context;
 
-    private ProductVariantsParityCheckerInterface&MockObject $variantsParityChecker;
+    private MockObject&ProductVariantsParityCheckerInterface $variantsParityChecker;
 
     private ProductVariantCombinationValidator $productVariantCombinationValidator;
 

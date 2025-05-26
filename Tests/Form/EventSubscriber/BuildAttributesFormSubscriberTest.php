@@ -29,7 +29,7 @@ final class BuildAttributesFormSubscriberTest extends TestCase
 {
     private FactoryInterface&MockObject $attributeValueFactory;
 
-    private TranslationLocaleProviderInterface&MockObject $localeProvider;
+    private MockObject&TranslationLocaleProviderInterface $localeProvider;
 
     private BuildAttributesFormSubscriber $buildAttributesFormSubscriber;
 
@@ -48,7 +48,7 @@ final class BuildAttributesFormSubscriberTest extends TestCase
                 FormEvents::PRE_SET_DATA => 'preSetData',
                 FormEvents::POST_SUBMIT => 'postSubmit',
             ],
-            BuildAttributesFormSubscriber::getSubscribedEvents()
+            BuildAttributesFormSubscriber::getSubscribedEvents(),
         );
     }
 
