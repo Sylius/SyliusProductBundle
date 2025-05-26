@@ -1,0 +1,122 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Tests\Sylius\Bundle\ProductBundle\Form\DataTransformer;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Sylius\Bundle\ProductBundle\Form\DataTransformer\ProductVariantToProductOptionsTransformer;
+use Sylius\Component\Product\Model\ProductInterface;
+use Sylius\Component\Product\Model\ProductOptionValueInterface;
+use Sylius\Component\Product\Model\ProductVariantInterface;
+use Symfony\Component\Form\DataTransformerInterface;
+use Symfony\Component\Form\Exception\TransformationFailedException;
+use Symfony\Component\Form\Exception\UnexpectedTypeException;
+
+final class ProductVariantToProductOptionsTransformerTest extends TestCase
+{
+    private ProductInterface&MockObject $variable;
+
+    private ProductVariantToProductOptionsTransformer $transformer;
+
+    protected function setUp(): void
+    {
+        $this->variable = $this->createMock(ProductInterface::class);
+
+        $this->transformer = new ProductVariantToProductOptionsTransformer($this->variable);
+    }
+
+    public function test_it_implements_data_transformer_interface(): void
+    {
+        $this->assertInstanceOf(DataTransformerInterface::class, $this->transformer);
+    }
+
+    public function test_it_transforms_null_to_array(): void
+    {
+        $this->assertSame([], $this->transformer->transform(null));
+    }
+
+    public function test_it_throws_exception_when_transforming_unsupported_type(): void
+    {
+        $this->expectException(UnexpectedTypeException::class);
+        $this->transformer->transform([]);
+    }
+
+    public function test_it_transforms_variant_into_variant_options(): void
+    {
+        $variant = $this->createMock(ProductVariantInterface::class);
+        $optionValues = $this->createMock(Collection::class);
+
+        $variant->method('getOptionValues')->willReturn($optionValues);
+        $optionValues->method('toArray')->willReturn([]);
+
+        $this->assertSame([], $this->transformer->transform($variant));
+    }
+
+    public function test_it_reverse_transforms_null_into_null(): void
+    {
+        $this->assertNull($this->transformer->reverseTransform(null));
+    }
+
+    public function test_it_reverse_transforms_empty_string_into_null(): void
+    {
+        $this->assertNull($this->transformer->reverseTransform(''));
+    }
+
+    public function test_it_throws_exception_when_reverse_transforming_unsupported_type(): void
+    {
+        $this->expectException(UnexpectedTypeException::class);
+        $this->transformer->reverseTransform(new \stdClass());
+    }
+
+    public function test_it_throws_exception_when_variable_has_no_variants(): void
+    {
+        $this->variable->method('getVariants')->willReturn(new ArrayCollection());
+        $this->variable->method('getCode')->willReturn('example');
+
+        $optionValue = $this->createMock(ProductOptionValueInterface::class);
+
+        $this->expectException(TransformationFailedException::class);
+        $this->transformer->reverseTransform([$optionValue]);
+    }
+
+    public function test_it_reverse_transforms_when_variant_matches_options(): void
+    {
+        $variant = $this->createMock(ProductVariantInterface::class);
+        $optionValue = $this->createMock(ProductOptionValueInterface::class);
+
+        $variant->method('hasOptionValue')->with($optionValue)->willReturn(true);
+
+        $this->variable->method('getVariants')->willReturn(new ArrayCollection([$variant]));
+
+        $this->assertSame($variant, $this->transformer->reverseTransform([$optionValue]));
+    }
+
+    public function test_it_throws_exception_when_variant_does_not_match_options(): void
+    {
+        $variant = $this->createMock(ProductVariantInterface::class);
+        $optionValue = $this->createMock(ProductOptionValueInterface::class);
+
+        $variant->method('hasOptionValue')->with($optionValue)->willReturn(false);
+
+        $this->variable->method('getVariants')->willReturn(new ArrayCollection([$variant]));
+        $this->variable->method('getCode')->willReturn('example');
+
+        $this->expectException(TransformationFailedException::class);
+        $this->transformer->reverseTransform([$optionValue]);
+    }
+
+    public function test_it_throws_exception_when_options_are_missing(): void
+    {
+        $variant = $this->createMock(ProductVariantInterface::class);
+
+        $this->variable->method('getVariants')->willReturn(new ArrayCollection([$variant]));
+        $this->variable->method('getCode')->willReturn('example');
+
+        $this->expectException(TransformationFailedException::class);
+        $this->transformer->reverseTransform([null]);
+    }
+}

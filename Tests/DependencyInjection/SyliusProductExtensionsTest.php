@@ -11,13 +11,13 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\ProductBundle\Tests\DependencyInjection;
+namespace Tests\Sylius\Bundle\ProductBundle\DependencyInjection;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use PHPUnit\Framework\Attributes\Test;
 use Sylius\Bundle\ProductBundle\DependencyInjection\SyliusProductExtension;
-use Sylius\Bundle\ProductBundle\Tests\Stub\ProductVariantResolverStub;
 use Symfony\Component\DependencyInjection\Definition;
+use Tests\Sylius\Bundle\ProductBundle\Stub\ProductVariantResolverStub;
 
 final class SyliusProductExtensionsTest extends AbstractExtensionTestCase
 {
