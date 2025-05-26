@@ -10,7 +10,7 @@
 
     <testsuites>
         <testsuite name="sylius-product-bundle">
-            <directory>./Tests/</directory>
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
