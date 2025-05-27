@@ -59,7 +59,7 @@ final class UniqueSimpleProductCodeValidatorTest extends TestCase
         $this->uniqueSimpleProductCodeValidator->validate($product, $constraint);
     }
 
-    public function testDoesNotAddViolationIfProductIsSimpleButCodeHasNotBeenUsedAmongNeitherProducsNorProductVariants(): void
+    public function testDoesNotAddViolationIfProductIsSimpleButCodeHasNotBeenUsedAmongNeitherProductsNorProductVariants(): void
     {
         /** @var ProductInterface&MockObject $product */
         $product = $this->createMock(ProductInterface::class);

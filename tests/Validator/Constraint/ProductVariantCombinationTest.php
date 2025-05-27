@@ -26,6 +26,11 @@ final class ProductVariantCombinationTest extends TestCase
         $this->productVariantCombination = new ProductVariantCombination();
     }
 
+    public function testConstraintType(): void
+    {
+        $this->assertInstanceOf(Constraint::class, $this->productVariantCombination);
+    }
+
     public function testClassConstraint(): void
     {
         $this->assertSame(Constraint::CLASS_CONSTRAINT, $this->productVariantCombination->getTargets());

@@ -92,7 +92,7 @@ final class ProductVariantCombinationValidatorTest extends TestCase
 
         $variant->expects($this->once())->method('getProduct')->willReturn($product);
         $product->expects($this->once())->method('hasVariants')->willReturn(false);
-        $product->expects($this->never())->method('hasOptions')->willReturn(true);
+        $product->expects($this->never())->method('hasOptions');
         $this->context->expects($this->never())->method('addViolation');
         $this->variantsParityChecker->expects($this->never())->method('checkParity')->with($variant, $product);
 

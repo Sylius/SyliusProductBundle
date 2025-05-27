@@ -20,7 +20,6 @@ use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\UnitOfWork;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
-use Mockery\MockInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sylius\Bundle\ProductBundle\Doctrine\ORM\ProductAttributeValueRepository;
@@ -120,7 +119,7 @@ final class SelectProductAttributeChoiceRemoveListenerTest extends TestCase
     {
         /** @var ProductAttributeInterface&MockObject $productAttribute */
         $productAttribute = $this->createMock(ProductAttributeInterface::class);
-        /** @var UnitOfWork&MockInterface $unitOfWork */
+        /** @var UnitOfWork&MockObject $unitOfWork */
         $unitOfWork = $this->createMock(UnitOfWork::class);
 
         $this->event->expects($this->once())->method('getObject')->willReturn($productAttribute);
@@ -155,7 +154,7 @@ final class SelectProductAttributeChoiceRemoveListenerTest extends TestCase
     {
         /** @var ProductAttributeInterface&MockObject $productAttribute */
         $productAttribute = $this->createMock(ProductAttributeInterface::class);
-        /** @var UnitOfWork&MockInterface $unitOfWork */
+        /** @var UnitOfWork&MockObject $unitOfWork */
         $unitOfWork = $this->createMock(UnitOfWork::class);
 
         $this->event->expects($this->once())->method('getObject')->willReturn($productAttribute);
