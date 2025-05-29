@@ -1,28 +1,28 @@
 sylius:
     form:
         product:
-            name: Name
-            description: Description
-            attributes: Attributes
-            options: Options
-            meta_keywords: Meta keywords
-            meta_description: Meta description
-            slug: Slug
-            taxons: Taxons
+            name: 'Navn'
+            description: 'Beskrivelse'
+            attributes: 'Attributter'
+            options: 'Valg'
+            meta_keywords: 'Meta nøkkelord'
+            meta_description: 'Meta beskrivelse'
+            slug: 'Slug'
+            taxons: 'Taksoner'
         product_variant:
-            name: Name
+            name: 'Navn'
         association_type:
-            name: Name
-            translations: Translations
+            name: 'Navn'
+            translations: 'Oversettelser'
         association:
-            type: Association Type
-            product: Associated Product
+            type: 'Assosiasjonstype'
+            product: 'Assosiert produkt'
         variant:
-            name: Name
+            name: 'Navn'
         option:
-            name: Name
-            position: Position
-            values: Possible values
+            name: 'Navn'
+            position: 'Posisjon'
+            values: 'Mulige verdier'
         option_value:
-            add_value: Add value
-            value: Value
+            add_value: 'Legg til verdi'
+            value: 'Verdi'
