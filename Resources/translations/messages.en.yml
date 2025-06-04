@@ -1,28 +1,31 @@
+# This file is part of the Sylius package.
+# (c) Sylius Sp. z o.o.
+
 sylius:
     form:
         product:
-            name: 'Navn'
-            description: 'Beskrivelse'
-            attributes: 'Attributter'
-            options: 'Valg'
-            meta_keywords: 'Meta nøkkelord'
-            meta_description: 'Meta beskrivelse'
-            slug: 'Slug'
-            taxons: 'Taksoner'
+            name: Name
+            description: Description
+            attributes: Attributes
+            options: Options
+            meta_keywords: Meta keywords
+            meta_description: Meta description
+            slug: Slug
+            taxons: Taxons
         product_variant:
-            name: 'Navn'
+            name: Name
         association_type:
-            name: 'Navn'
-            translations: 'Oversettelser'
+            name: Name
+            translations: Translations
         association:
-            type: 'Assosiasjonstype'
-            product: 'Assosiert produkt'
+            type: Association Type
+            product: Associated Product
         variant:
-            name: 'Navn'
+            name: Name
         option:
-            name: 'Navn'
-            position: 'Posisjon'
-            values: 'Mulige verdier'
+            name: Name
+            position: Position
+            values: Possible values
         option_value:
-            add_value: 'Legg til verdi'
-            value: 'Verdi'
+            add_value: Add value
+            value: Value
