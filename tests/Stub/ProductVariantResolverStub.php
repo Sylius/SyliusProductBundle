@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\ProductBundle\Tests\Stub;
+namespace Tests\Sylius\Bundle\ProductBundle\Stub;
 
 use Sylius\Bundle\ProductBundle\Attribute\AsProductVariantResolver;
 use Sylius\Component\Product\Model\ProductInterface;
