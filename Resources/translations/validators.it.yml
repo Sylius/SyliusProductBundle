@@ -30,7 +30,7 @@ sylius:
             not_blank: 'Per favore inserisci il codice.'
             regex: 'Il codice della variante del prodotto può contenere solo lettere, numeri, trattini e underscore.'
             unique: 'Il codice della variante del prodotto deve essere unico.'
-            within_product_unique: 'Questo codice deve essere unico all\'interno di questo prodotto.'
+            within_product_unique: 'Questo codice deve essere unico all''interno di questo prodotto.'
         option_values:
             not_configured: 'La variante del prodotto deve avere valori configurati per tutte le opzioni scelte nel prodotto.'
     simple_product:
@@ -39,29 +39,29 @@ sylius:
     option:
         code:
             max_length: 'Il codice non deve essere più lungo di {{ limit }} caratteri.'
-            not_blank: 'Per favore inserisci il codice dell\'opzione.'
-            regex: 'Il codice dell\'opzione può contenere solo lettere, numeri, trattini e underscore.'
-            unique: 'Esiste già un\'opzione con il codice fornito.'
+            not_blank: 'Per favore inserisci il codice dell''opzione.'
+            regex: 'Il codice dell''opzione può contenere solo lettere, numeri, trattini e underscore.'
+            unique: 'Esiste già un''opzione con il codice fornito.'
         name:
-            not_blank: 'Per favore inserisci il nome dell\'opzione.'
-            min_length: 'Il nome dell\'opzione deve essere lungo almeno 1 carattere.|Il nome dell\'opzione deve essere lungo almeno {{ limit }} caratteri.'
-            max_length: 'Il nome dell\'opzione non deve essere più lungo di 1 carattere.|Il nome dell\'opzione non deve essere più lungo di {{ limit }} caratteri.'
+            not_blank: 'Per favore inserisci il nome dell''opzione.'
+            min_length: 'Il nome dell''opzione deve essere lungo almeno 1 carattere.|Il nome dell''opzione deve essere lungo almeno {{ limit }} caratteri.'
+            max_length: 'Il nome dell''opzione non deve essere più lungo di 1 carattere.|Il nome dell''opzione non deve essere più lungo di {{ limit }} caratteri.'
         values:
-            min_count: 'Per favore aggiungi almeno {{ limit }} valore dell\'opzione.|Per favore aggiungi almeno {{ limit }} valori dell\'opzione.'
+            min_count: 'Per favore aggiungi almeno {{ limit }} valore dell''opzione.|Per favore aggiungi almeno {{ limit }} valori dell''opzione.'
     option_value:
         code:
             max_length: 'Il codice non deve essere più lungo di {{ limit }} caratteri.'
-            not_blank: 'Per favore inserisci il codice del valore dell\'opzione.'
-            regex: 'Il codice del valore dell\'opzione può contenere solo lettere, numeri, trattini e underscore.'
-            unique: 'Il valore dell\'opzione con il codice fornito esiste già.'
+            not_blank: 'Per favore inserisci il codice del valore dell''opzione.'
+            regex: 'Il codice del valore dell''opzione può contenere solo lettere, numeri, trattini e underscore.'
+            unique: 'Il valore dell''opzione con il codice fornito esiste già.'
         value:
-            not_blank: 'Per favore inserisci il valore dell\'opzione.'
+            not_blank: 'Per favore inserisci il valore dell''opzione.'
     association:
-        unique: 'Esiste già un\'associazione con questo proprietario e tipo.'
+        unique: 'Esiste già un''associazione con questo proprietario e tipo.'
         type:
             not_blank: 'Per favore inserisci il tipo di associazione.'
         owner:
-            not_blank: 'Per favore inserisci il proprietario dell\'associazione.'
+            not_blank: 'Per favore inserisci il proprietario dell''associazione.'
     association_type:
         name:
             not_blank: 'Per favore inserisci il nome del tipo di associazione.'
