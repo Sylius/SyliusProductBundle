@@ -3,4 +3,4 @@
 
 sylius:
     product_variant:
-        generate: 'Varianty produktov boli úspešne vygenerované.'
+        generate: '상품 바리아ント가 성공적으로 생성되었습니다.'

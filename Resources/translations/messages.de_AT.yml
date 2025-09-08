@@ -19,7 +19,7 @@ sylius:
             translations: 'Übersetzungen'
         association:
             type: 'Assoziationstyp'
-            product: 'Zugehöriges Produkt'
+            product: 'Assoziiertes Produkt'
         variant:
             name: 'Name'
         option:

@@ -12,9 +12,9 @@ sylius:
             max_length: 'Der Produkt-Slug darf höchstens 1 Zeichen lang sein.|Der Produkt-Slug darf höchstens {{ limit }} Zeichen lang sein.'
         code:
             max_length: 'Der Code darf höchstens {{ limit }} Zeichen lang sein.'
-            not_blank: 'Bitte geben Sie den Produktcode ein.'
-            regex: 'Der Produktcode darf nur aus Buchstaben, Zahlen, Bindestrichen und Unterstrichen bestehen.'
-            unique: 'Der Produktcode muss eindeutig sein.'
+            not_blank: 'Bitte geben Sie den Produkt-Code ein.'
+            regex: 'Der Produkt-Code darf nur aus Buchstaben, Zahlen, Bindestrichen und Unterstrichen bestehen.'
+            unique: 'Der Produkt-Code muss eindeutig sein.'
         name:
             not_blank: 'Bitte geben Sie den Produktnamen ein.'
             min_length: 'Der Produktname muss mindestens 1 Zeichen lang sein.|Der Produktname muss mindestens {{ limit }} Zeichen lang sein.'
@@ -24,18 +24,18 @@ sylius:
         meta_description:
             max_length: 'Die Meta-Beschreibung des Produkts darf höchstens 1 Zeichen lang sein.|Die Meta-Beschreibung des Produkts darf höchstens {{ limit }} Zeichen lang sein.'
     product_variant:
-        combination: 'Variante mit diesem Optionssatz existiert bereits.'
+        combination: 'Eine Variante mit diesem Optionssatz existiert bereits.'
         code:
             max_length: 'Der Code darf höchstens {{ limit }} Zeichen lang sein.'
             not_blank: 'Bitte geben Sie den Code ein.'
-            regex: 'Der Produktvarianten-Code darf nur aus Buchstaben, Zahlen, Bindestrichen und Unterstrichen bestehen.'
-            unique: 'Der Produktvarianten-Code muss eindeutig sein.'
+            regex: 'Der Produktvariant-Code darf nur aus Buchstaben, Zahlen, Bindestrichen und Unterstrichen bestehen.'
+            unique: 'Der Produktvariant-Code muss eindeutig sein.'
             within_product_unique: 'Dieser Code muss innerhalb dieses Produkts eindeutig sein.'
         option_values:
-            not_configured: 'Die Produktvariante muss für alle im Produkt gewählten Optionen konfigurierte Werte haben.'
+            not_configured: 'Die Produktvariante muss für alle Optionen, die für das Produkt gewählt wurden, konfigurierte Werte haben.'
     simple_product:
         code:
-            unique: 'Der Code des einfachen Produkts muss unter allen Produkten und Produktvarianten eindeutig sein.'
+            unique: 'Der Code des einfachen Produkts muss eindeutig sein und darf nicht mit anderen Produkten und Produktvarianten übereinstimmen.'
     option:
         code:
             max_length: 'Der Code darf höchstens {{ limit }} Zeichen lang sein.'
@@ -47,12 +47,12 @@ sylius:
             min_length: 'Der Optionsname muss mindestens 1 Zeichen lang sein.|Der Optionsname muss mindestens {{ limit }} Zeichen lang sein.'
             max_length: 'Der Optionsname darf höchstens 1 Zeichen lang sein.|Der Optionsname darf höchstens {{ limit }} Zeichen lang sein.'
         values:
-            min_count: 'Bitte fügen Sie mindestens {{ limit }} Optionswert hinzu.|Bitte fügen Sie mindestens {{ limit }} Optionswerte hinzu.'
+            min_count: 'Bitte fügen Sie mindestens {{ limit }} Option(en) hinzu.|Bitte fügen Sie mindestens {{ limit }} Optionen hinzu.'
     option_value:
         code:
             max_length: 'Der Code darf höchstens {{ limit }} Zeichen lang sein.'
-            not_blank: 'Bitte geben Sie den Optionswert-Code ein.'
-            regex: 'Der Optionswert-Code darf nur aus Buchstaben, Zahlen, Bindestrichen und Unterstrichen bestehen.'
+            not_blank: 'Bitte geben Sie den Optionswertcode ein.'
+            regex: 'Der Optionswertcode darf nur aus Buchstaben, Zahlen, Bindestrichen und Unterstrichen bestehen.'
             unique: 'Der Optionswert mit dem angegebenen Code existiert bereits.'
         value:
             not_blank: 'Bitte geben Sie den Optionswert ein.'
