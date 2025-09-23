@@ -53,11 +53,9 @@ final class SelectProductAttributeChoiceRemoveListenerTest extends TestCase
         $productAttributeValue = $this->createMock(ProductAttributeValueInterface::class);
         /** @var QueryBuilder&MockObject $queryBuilder */
         $queryBuilder = $this->createMock(QueryBuilder::class);
-        /** @var Connection&MockObject $connection */
-        $connection = $this->createMock(Connection::class);
         /** @var Query&MockObject $query */
         $query = $this->createMock(Query::class);
-        /** @var UnitOfWork&MockInterface $unitOfWork */
+        /** @var UnitOfWork&MockObject $unitOfWork */
         $unitOfWork = $this->createMock(UnitOfWork::class);
 
         $productAttributeValueRepository = new ProductAttributeValueRepository($this->entityManager, new ClassMetadata(ProductAttributeValue::class));
@@ -83,7 +81,6 @@ final class SelectProductAttributeChoiceRemoveListenerTest extends TestCase
         ;
 
         $this->entityManager->expects($this->once())->method('getUnitOfWork')->willReturn($unitOfWork);
-        $this->entityManager->expects($this->once())->method('getConnection')->willReturn($connection);
         $this->entityManager
             ->expects($this->once())
             ->method('getRepository')
